@@ -8,10 +8,20 @@ import styles from './styles';
 class EditorComponent extends React.Component {
     constructor() {
         super();
+        this.state = {
+            text: '',
+            title: '',
+            id: ''
+        };
     }
 
     render() {
-        return <div>Hello from the editor</div>;
+        const { classes } = this.props;
+        return (
+            <div className={classes.editorContainer}>
+                <ReactQuill></ReactQuill>
+            </div>
+        );
     }
 }
 

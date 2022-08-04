@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { doc, onSnapshot, collection, query, where } from 'firebase/firestore';
 import db from './firebase';
+import SidebarComponent from './sidebar/sidebar';
+import EditorComponent from './editor/editor';
 
 class App extends Component {
     constructor() {
@@ -13,7 +15,12 @@ class App extends Component {
         };
     }
     render() {
-        return <div>Hello World</div>;
+        return (
+            <div className="app-container">
+                <SidebarComponent />
+                <EditorComponent />
+            </div>
+        );
     }
 
     componentDidMount = () => {

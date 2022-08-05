@@ -65,14 +65,14 @@ class SidebarComponent extends React.Component {
         this.setState({ title: title });
     };
     newNote = () => {
-        console.log('NEW NOTE SUBMITTED\n');
-        console.log(this.state);
+        this.props.newNote(this.state.title);
+        this.setState({ title: null, addingNote: false });
     };
-    selectNote = () => {
-        console.log('SELECT NOTE');
+    selectNote = (note, index) => {
+        this.props.selectNote(note, index);
     };
-    deleteNote = () => {
-        console.log('DELETE NOTE');
+    deleteNote = (note) => {
+        this.props.deleteNote(note);
     };
 }
 
